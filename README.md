@@ -1,3 +1,4 @@
+![test-badge](https://github.com/ahmedheakl/coolgo/workflows/test/badge.svg)
 # CoolGo: Cool Compiler using Go Language
 
 ## Context Free Grammar
