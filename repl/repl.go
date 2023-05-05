@@ -34,8 +34,10 @@ func Start(in io.Reader, out io.Writer) {
 
 		io.WriteString(out, program.String())
 		io.WriteString(out, "\n")
+		l = lexer.New(line)
 		for tok := l.NextToken(); tok.Type != token.EOF; tok = l.NextToken() {
-			fmt.Printf("%+v\n", tok)
+			s := fmt.Sprintf("%+v\n", tok)
+			io.WriteString(out, s)
 		}
 	}
 }
@@ -43,6 +45,7 @@ func Start(in io.Reader, out io.Writer) {
 func printParseErrors(out io.Writer, errors []string) {
 	io.WriteString(out, " parser errors:\n")
 	for _, msg := range errors {
+
 		io.WriteString(out, "\t"+msg+"\n")
 	}
 }
