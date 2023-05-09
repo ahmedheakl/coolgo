@@ -90,6 +90,17 @@ let x = 2 * 3 + 4;
 #### 2. Parsing
 ```rust
 let x = ((2 * 3) + 4);
+BEGIN ParseProgram
+        BEGIN parseStatement
+                BEGIN parseLetStatement
+                        BEGIN parseExpression
+                                BEGIN parseIntegerLiteral
+                                BEGIN parseInfixExpression
+                                        BEGIN parseExpression
+                                                BEGIN parseIntegerLiteral
+                                BEGIN parseInfixExpression
+                                        BEGIN parseExpression
+                                                BEGIN parseIntegerLiteral
 ```
 
 ## To run the project
